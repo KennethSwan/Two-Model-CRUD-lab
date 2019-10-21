@@ -8,7 +8,7 @@ require('./db/db')
 app.use(methodOverride('_method')); 
 app.use(bodyParser.urlencoded({extended: false}));
 
-const nationalController = require('./cotrollers/national.js')
+const nationalController = require('./controllers/national.js')
 app.use('/national', nationalController);
 
 app.get('/', (req, res) => {
