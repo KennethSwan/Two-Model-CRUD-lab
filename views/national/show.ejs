@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <header>
+      <h1>Show Page for <%=national.name%></h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/national">National Index</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h2>Team Attributes:</h2>
+        <ul>
+          <li>Name: <%=national.name%></li>
+        </ul>
+      </section>
+      <section>
+    <h2>Other Teams in This City:</h2>
+    <ul>
+        <% for(let i = 0; i < national.city.length; i++){ %>
+            <li><a href="/american/<%=national.city[i]._id%>"><%=national.city%></a></li>
+        <% } %>
+    </ul>
+</section>
+      <section>
+        <form action="/national/<%=national._id%>?_method=DELETE" method="POST">
+          <button type='submit'>Delete </button>
+        </form>
+      </section>
+      <section>
+        <a href="/national/<%=national._id%>/edit">Edit</a>
+      </section>
+    </main>
+  </body>
+</html>

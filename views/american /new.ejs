@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <header>
+      <h1>Create a Team</h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/articles">Teams Index</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <form action="/american" method="post">
+          <select name="nationalId">
+              <% for(let i = 0; i < national.length; i++) { %>
+                  <option value="<%=national[i]._id%>"><%=national[i].name%></option>
+              <% } %>
+          </select><br/>
+          <input type="text" name="title" /><br/>
+          <textarea name="body"></textarea><br/>
+          <input type="submit" value="Add Team"/>
+      </form>
+    </main>
+  </body>
+</html>
